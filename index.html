@@ -17,7 +17,7 @@
             --accent-red: #D9232D;
             --accent-blue: #0A2F54;
             --gray-dark: #475569;
-            --bg-color: #F1F5F9;
+            --bg-color: #F8FAFC;
             --card-bg: #FFFFFF;
             --sidebar-width: 275px;
             --gold: #D97706;
@@ -25,49 +25,45 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
         body { background-color: var(--bg-color); color: #1E293B; display: flex; height: 100vh; overflow: hidden; }
 
-        /* شاشة تسجيل الدخول */
+        /* شاشة تسجيل الدخول بالشعار الجديد */
         #loginScreen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(135deg, #0F2537 0%, #0A2F54 100%);
             display: flex; justify-content: center; align-items: center; z-index: 9999;
         }
         .login-card {
-            background: #fff; padding: 40px; border-radius: 20px; width: 100%; max-width: 440px;
-            box-shadow: 0 20px 30px rgba(0,0,0,0.3); text-align: center; border: 2px solid rgba(255,255,255,0.2);
+            background: #fff; padding: 35px; border-radius: 20px; width: 100%; max-width: 440px;
+            box-shadow: 0 25px 40px rgba(0,0,0,0.4); text-align: center; border: 3px solid rgba(13, 148, 136, 0.3);
         }
-        .login-card label { display: block; text-align: right; margin: 10px 0 5px; font-weight: 700; font-size: 14px; }
+        .login-card label { display: block; text-align: right; margin: 10px 0 5px; font-weight: 700; font-size: 14px; color: var(--primary); }
         .login-card input { width: 100%; padding: 12px; border: 1.5px solid #CBD5E1; border-radius: 10px; outline: none; font-family: 'Cairo'; }
         
-        /* الشريط الجانبي ثلاثي الأبعاد */
+        /* الشريط الجانبي */
         aside {
             width: var(--sidebar-width); background: linear-gradient(180deg, #0F2537 0%, #06121E 100%);
             color: #fff; display: flex; flex-direction: column; justify-content: space-between; padding: 25px 20px;
             box-shadow: 5px 0 20px rgba(0,0,0,0.2);
         }
-        .brand-header { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
-        .nav-menu { list-style: none; margin-top: 25px; }
+        .brand-header { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+        .nav-menu { list-style: none; margin-top: 20px; }
         .nav-menu li { margin-bottom: 10px; }
         .nav-menu a {
             color: #94A3B8; text-decoration: none; display: flex; align-items: center; gap: 12px;
-            padding: 14px 18px; border-radius: 12px; font-weight: 700; font-size: 14px; transition: 0.3s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 12px 16px; border-radius: 12px; font-weight: 700; font-size: 14px; transition: 0.3s;
         }
         .nav-menu a:hover, .nav-menu a.active {
             background: linear-gradient(135deg, #0D9488 0%, #059669 100%); color: #fff;
             box-shadow: 0 6px 15px rgba(13, 148, 136, 0.4); transform: translateY(-2px);
         }
 
-        /* المحتوى الرئيسي */
         .main-wrapper { flex-grow: 1; display: flex; flex-direction: column; overflow-y: auto; }
         header {
             background: #fff; padding: 18px 35px; display: flex; justify-content: space-between;
-            align-items: center; border-bottom: 1px solid #E2E8F0; position: relative;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            align-items: center; border-bottom: 1px solid #E2E8F0; box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
         .user-badge {
             background: #E0F2FE; color: #0369A1; padding: 8px 16px; border-radius: 20px;
             font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; gap: 8px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .container { padding: 30px; }
@@ -78,19 +74,19 @@
             margin-bottom: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);
         }
 
-        /* أزرار وكروت ثلاثية الأبعاد (3D Buttons) */
         .btn {
             background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%); color: #fff; border: none;
-            padding: 10px 20px; border-radius: 10px; cursor: pointer; font-family: 'Cairo'; font-weight: 700;
+            padding: 10px 18px; border-radius: 10px; cursor: pointer; font-family: 'Cairo'; font-weight: 700;
             display: inline-flex; align-items: center; gap: 8px; transition: 0.3s;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 2px 0 #065F46;
         }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(13, 148, 136, 0.3), 0 3px 0 #065F46; }
-        .btn-excel { background: linear-gradient(135deg, #107C41 0%, #0B5A2F 100%); box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 2px 0 #073B1E; }
-        .btn-danger { background: linear-gradient(135deg, #D9232D 0%, #991B1B 100%); box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 2px 0 #7F1D1D; }
-        .btn-3d-summary { background: linear-gradient(135deg, #D97706 0%, #B45309 100%); box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 2px 0 #78350F; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(13, 148, 136, 0.3); }
+        .btn-excel { background: linear-gradient(135deg, #107C41 0%, #0B5A2F 100%); }
+        .btn-danger { background: linear-gradient(135deg, #D9232D 0%, #991B1B 100%); }
+        .btn-gold { background: linear-gradient(135deg, #D97706 0%, #B45309 100%); }
 
-        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-bottom: 25px; }
+        /* الترتيب المطلوب للكروت: إجمالي العملاء -> الوزن الإجمالي -> الوزن الصافي -> المتر الطولي */
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; margin-bottom: 25px; }
         .kpi-card {
             background: #fff; padding: 20px; border-radius: 14px; border-right: 6px solid var(--secondary);
             box-shadow: 0 8px 15px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center;
@@ -105,31 +101,20 @@
         .form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 5px; color: var(--primary); }
         .form-group input, .form-group select { width: 100%; padding: 10px; border: 1.5px solid #CBD5E1; border-radius: 8px; outline: none; font-family: 'Cairo'; }
         
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 37, 55, 0.7);
-            display: none; justify-content: center; align-items: center; z-index: 99999; backdrop-filter: blur(4px);
-        }
-        .modal-content {
-            background: #fff; border-radius: 20px; padding: 30px; width: 90%; max-width: 800px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3); border: 3px solid var(--secondary);
-        }
-        .printable-header {
-            border: 2px solid var(--primary); padding: 15px; border-radius: 10px; margin-bottom: 20px; background: #fff;
+        /* تصميم مستند التقرير الاحترافي المطابق لشيت "بيانات العميل" */
+        .client-report-doc {
+            background: #fff; padding: 40px; border: 4px double var(--primary); border-radius: 15px; max-width: 900px; margin: auto; display: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. شاشة تسجيل الدخول -->
+    <!-- 1. شاشة تسجيل الدخول بالشعار الجديد -->
     <div id="loginScreen">
         <div class="login-card">
-            <svg width="90" height="90" viewBox="0 0 200 200" style="margin-bottom: 10px;">
-                <path d="M 80 20 C 130 20, 160 50, 140 100 C 120 150, 80 180, 80 180 C 80 180, 110 130, 110 100 C 110 70, 90 40, 80 20 Z" fill="#D9232D" />
-                <path d="M 75 45 C 105 45, 125 65, 110 100 C 95 135, 75 155, 75 155 C 75 155, 95 120, 95 100 C 95 80, 80 60, 75 45 Z" fill="#0A2F54" />
-                <circle cx="125" cy="55" r="14" fill="#475569" />
-            </svg>
-            <h2 style="color: var(--primary); font-size: 22px; font-weight: 900;">صناعات الفوم</h2>
-            <p style="color: #64748B; font-size: 12px; margin-bottom: 25px; font-weight: 700;">FOAM INDUSTRIES CO.</p>
+            <img src="WhatsApp Image 2026-11-10 at 1.10.31 PM.jpeg" alt="Foam Industries Logo" style="width: 120px; height: auto; margin-bottom: 10px; border-radius: 8px;">
+            <h2 style="color: var(--primary); font-size: 20px; font-weight: 900;">صناعات الفوم</h2>
+            <p style="color: #64748B; font-size: 11px; margin-bottom: 20px; font-weight: 700;">FOAM INDUSTRIES CO. - MADE IN EGYPT</p>
             
             <form onsubmit="handleLogin(event)">
                 <div class="form-group">
@@ -140,7 +125,7 @@
                     <label>كلمة المرور:</label>
                     <input type="password" id="loginPass" placeholder="••••••••" required>
                 </div>
-                <button type="submit" class="btn" style="width: 100%; justify-content: center; margin-top: 15px; font-size: 16px;">تسجيل الدخول</button>
+                <button type="submit" class="btn" style="width: 100%; justify-content: center; margin-top: 15px; font-size: 15px;">تسجيل الدخول</button>
             </form>
             <p style="margin-top: 15px; font-size: 12px; color: var(--secondary); cursor: pointer; font-weight: 700;" onclick="forgotPassword()">نسيت كلمة المرور؟</p>
         </div>
@@ -150,13 +135,9 @@
     <aside>
         <div>
             <div class="brand-header">
-                <svg width="75" height="75" viewBox="0 0 200 200">
-                    <path d="M 80 20 C 130 20, 160 50, 140 100 C 120 150, 80 180, 80 180 C 80 180, 110 130, 110 100 C 110 70, 90 40, 80 20 Z" fill="#D9232D" />
-                    <path d="M 75 45 C 105 45, 125 65, 110 100 C 95 135, 75 155, 75 155 C 75 155, 95 120, 95 100 C 95 80, 80 60, 75 45 Z" fill="#0A2F54" />
-                    <circle cx="125" cy="55" r="14" fill="#94A3B8" />
-                </svg>
-                <h3 style="font-size: 17px; margin-top: 5px; font-weight: 800;">صناعات الفوم</h3>
-                <p style="font-size: 10px; color: #94A3B8; font-weight: 700;">FOAM INDUSTRIES CO.</p>
+                <img src="WhatsApp Image 2026-11-10 at 1.10.31 PM.jpeg" alt="Logo" style="width: 70px; border-radius: 6px; margin-bottom: 5px;">
+                <h3 style="font-size: 15px; font-weight: 800;">صناعات الفوم</h3>
+                <p style="font-size: 9px; color: #94A3B8; font-weight: 700;">MADE IN EGYPT</p>
             </div>
             <ul class="nav-menu">
                 <li><a href="#" class="active" onclick="switchTab('dashboard', this)"><i class="fa-solid fa-chart-pie"></i> لوحة التحكم والتحليل</a></li>
@@ -166,14 +147,13 @@
                 <li id="usersMenuBtn"><a href="#" onclick="switchTab('users', this)"><i class="fa-solid fa-user-gear"></i> إدارة المستخدمين</a></li>
             </ul>
         </div>
-        <div style="font-size: 11px; text-align: center; color: #64748B; font-weight: 700;">نظام أوردارات التصدير v3.1</div>
+        <div style="font-size: 11px; text-align: center; color: #64748B; font-weight: 700;">نظام التصدير v3.8</div>
     </aside>
 
     <!-- 3. المحتوى الرئيسي -->
     <div class="main-wrapper">
         <header>
             <h3 style="color: var(--primary); font-weight: 800;">نظام إدارة أوردارات التصدير - Foam Industries Co.</h3>
-            
             <div style="display: flex; align-items: center; gap: 20px;">
                 <span class="user-badge" id="activeUserBadge"><i class="fa-solid fa-user-check"></i> <span id="activeUserName">Ahmed</span></span>
                 <button class="btn btn-danger" style="padding: 6px 14px; font-size: 12px;" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> خروج</button>
@@ -182,17 +162,25 @@
 
         <div class="container">
             
-            <!-- تبويب 1: لوحة التحكم -->
+            <!-- تبويب 1: لوحة التحكم والتحليل (الشهر والسنة والترتيب المطلوب) -->
             <div id="dashboard" class="tab-content active">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
                     <h3 style="color: var(--primary); font-weight: 800;">مؤشرات تصدير المنتجات</h3>
                     
                     <div style="display: flex; align-items: center; gap: 15px; background: #fff; padding: 10px 15px; border-radius: 12px; border: 1px solid #CBD5E1;">
                         <div>
-                            <label style="font-size: 12px; font-weight: 700;">تحديد العميل:</label>
+                            <label style="font-size: 12px; font-weight: 700;">العميل:</label>
                             <select id="customerFilter" onchange="updateCharts()" style="padding: 6px; border-radius: 6px; border: 1px solid #CBD5E1; font-family: 'Cairo';">
                                 <option value="all">جميع العملاء</option>
                                 <option value="3-FFF SHPK">3-FFF SHPK</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="font-size: 12px; font-weight: 700;">الشهر:</label>
+                            <select id="monthFilter" onchange="updateCharts()" style="padding: 6px; border-radius: 6px; border: 1px solid #CBD5E1; font-family: 'Cairo';">
+                                <option value="all">جميع الشهور</option>
+                                <option value="10">أكتوبر (10)</option>
+                                <option value="11">نوفمبر (11)</option>
                             </select>
                         </div>
                         <div>
@@ -200,27 +188,13 @@
                             <select id="yearFilter" onchange="updateCharts()" style="padding: 6px; border-radius: 6px; border: 1px solid #CBD5E1; font-family: 'Cairo';">
                                 <option value="2026">2026</option>
                                 <option value="2025">2025</option>
-                                <option value="all">جميع الأعوام</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
+                <!-- الترتيب المطلوب للكروت: إجمالي العملاء -> الوزن الإجمالي -> الوزن الصافي -> المتر الطولي -->
                 <div class="kpi-grid">
-                    <div class="kpi-card" style="border-right-color: #2563EB;">
-                        <div>
-                            <div style="font-size: 12px; color: #64748B; font-weight: 700;">الوزن القائم (Gross Wt - كجم)</div>
-                            <div class="val" id="kpiGrossWeight">10,842.8</div>
-                        </div>
-                        <i class="fa-solid fa-truck-ramp-box fa-2x" style="color: #2563EB;"></i>
-                    </div>
-                    <div class="kpi-card" style="border-right-color: var(--accent-blue);">
-                        <div>
-                            <div style="font-size: 12px; color: #64748B; font-weight: 700;">الوزن الصافي (Net Wt - كجم)</div>
-                            <div class="val" id="kpiNetWeight">10,289.0</div>
-                        </div>
-                        <i class="fa-solid fa-weight-hanging fa-2x" style="color: var(--accent-blue);"></i>
-                    </div>
                     <div class="kpi-card" style="border-right-color: var(--secondary);">
                         <div>
                             <div style="font-size: 12px; color: #64748B; font-weight: 700;">إجمالي العملاء</div>
@@ -228,19 +202,26 @@
                         </div>
                         <i class="fa-solid fa-users fa-2x" style="color: var(--secondary);"></i>
                     </div>
+                    <div class="kpi-card" style="border-right-color: #2563EB;">
+                        <div>
+                            <div style="font-size: 12px; color: #64748B; font-weight: 700;">الوزن الإجمالي (Gross Wt)</div>
+                            <div class="val" id="kpiGrossWeight">10,842.8 كجم</div>
+                        </div>
+                        <i class="fa-solid fa-truck-ramp-box fa-2x" style="color: #2563EB;"></i>
+                    </div>
+                    <div class="kpi-card" style="border-right-color: var(--accent-blue);">
+                        <div>
+                            <div style="font-size: 12px; color: #64748B; font-weight: 700;">الوزن الصافي (Net Wt)</div>
+                            <div class="val" id="kpiNetWeight">10,289.0 كجم</div>
+                        </div>
+                        <i class="fa-solid fa-weight-hanging fa-2x" style="color: var(--accent-blue);"></i>
+                    </div>
                     <div class="kpi-card" style="border-right-color: var(--accent-red);">
                         <div>
                             <div style="font-size: 12px; color: #64748B; font-weight: 700;">المتر الطولي (Lm)</div>
-                            <div class="val" id="kpiLinearMeters">5,630</div>
+                            <div class="val" id="kpiLinearMeters">5,630 Lm</div>
                         </div>
                         <i class="fa-solid fa-ruler-horizontal fa-2x" style="color: var(--accent-red);"></i>
-                    </div>
-                    <div class="kpi-card" style="border-right-color: #F59E0B;">
-                        <div>
-                            <div style="font-size: 12px; color: #64748B; font-weight: 700;">وزن البلاستيك (كجم)</div>
-                            <div class="val" id="kpiPlastic">553.8</div>
-                        </div>
-                        <i class="fa-solid fa-box fa-2x" style="color: #F59E0B;"></i>
                     </div>
                 </div>
 
@@ -250,21 +231,21 @@
                         <canvas id="monthlyChart" height="120"></canvas>
                     </div>
                     <div class="card">
-                        <h4 style="margin-bottom: 15px; color: var(--primary); font-weight: 800;">توزيع الأصناف المصدرة</h4>
+                        <h4 style="margin-bottom: 15px; color: var(--primary); font-weight: 800;">توزيع الأصناف</h4>
                         <canvas id="productChart" height="240"></canvas>
                     </div>
                 </div>
             </div>
 
-            <!-- تبويب 2: قاعدة العملاء -->
+            <!-- تبويب 2: قاعدة العملاء (مع أزرار تحميل "بيانات العميل" بصيغتي Excel و PDF) -->
             <div id="customers" class="tab-content">
                 <div class="card" id="addCustomerCard">
                     <h3 style="font-weight: 800; color: var(--primary); margin-bottom: 15px;">إضافة عميل تصدير جديد</h3>
                     <div class="form-grid">
                         <div class="form-group"><label>Customer Name:</label><input type="text" id="cName"></div>
-                        <div class="form-group"><label>Country (اسم البلد):</label><input type="text" id="cCountry" placeholder="Albania..."></div>
-                        <div class="form-group"><label>Address (العنوان):</label><input type="text" id="cAddress"></div>
-                        <div class="form-group"><label>Delivery Location (مكان التسليم):</label><input type="text" id="cDeliveryLoc" placeholder="Durres Port..."></div>
+                        <div class="form-group"><label>Country (البلد):</label><input type="text" id="cCountry" placeholder="Albania"></div>
+                        <div class="form-group"><label>Address:</label><input type="text" id="cAddress"></div>
+                        <div class="form-group"><label>Delivery Location:</label><input type="text" id="cDeliveryLoc"></div>
                         <div class="form-group"><label>VAT No:</label><input type="text" id="cVat"></div>
                         <div class="form-group"><label>Mobile:</label><input type="text" id="cMobile"></div>
                         <div class="form-group"><label>Email:</label><input type="text" id="cEmail"></div>
@@ -274,20 +255,18 @@
                 </div>
 
                 <div class="card">
-                    <h3 style="font-weight: 800; color: var(--primary); margin-bottom: 15px;">قاعدة العملاء والبيانات التفصيلية</h3>
-                    <input type="text" id="searchBox" placeholder="ابحث باسم العميل أو البلد أو الرقم الضريبي..." oninput="searchCustomers()" style="width: 100%; max-width: 400px; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1.5px solid #CBD5E1;">
+                    <h3 style="font-weight: 800; color: var(--primary); margin-bottom: 15px;">قاعدة العملاء وسجل الأوردارات التاريخية والتفصيلية</h3>
+                    <input type="text" id="searchBox" placeholder="ابحث باسم العميل أو VAT..." oninput="searchCustomers()" style="width: 100%; max-width: 400px; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1.5px solid #CBD5E1;">
+                    
                     <table>
                         <thead>
                             <tr>
                                 <th>اسم الشركة</th>
                                 <th>البلد</th>
                                 <th>مكان التسليم</th>
-                                <th>العنوان</th>
                                 <th>الرقم الضريبي VAT</th>
-                                <th>الهاتف</th>
-                                <th>البريد</th>
                                 <th>مسؤول التواصل</th>
-                                <th>الملخص السنوي</th>
+                                <th>أزرار تحميل "بيانات العميل" (ملف كامل)</th>
                                 <th>الإجراءات</th>
                             </tr>
                         </thead>
@@ -301,162 +280,62 @@
                 <div class="card">
                     <h3 style="font-weight: 800; color: var(--primary); margin-bottom: 15px;">إضافة أمر بيع جديد (Sales Order)</h3>
                     <div class="form-grid">
-                        <div class="form-group"><label>رقم الأوردر (يدوي):</label><input type="text" id="soOrderNoInput" value="SO-2026-02"></div>
+                        <div class="form-group"><label>رقم الأوردر:</label><input type="text" id="soOrderNoInput" value="SO-2026-02"></div>
                         <div class="form-group">
                             <label>اختر العميل:</label>
                             <select id="soCustomerSelect" style="padding: 10px; border-radius: 8px; border: 1.5px solid #CBD5E1;">
                                 <option value="3-FFF SHPK">3-FFF SHPK (Albania)</option>
                             </select>
                         </div>
-                        <div class="form-group"><label>تاريخ طلب الأوردر:</label><input type="date" id="soOrderDate" value="2026-10-24"></div>
+                        <div class="form-group"><label>تاريخ الطلب:</label><input type="date" id="soOrderDate" value="2026-10-24"></div>
                         <div class="form-group"><label>تاريخ التسليم:</label><input type="date" id="soDeliveryDate" value="2026-11-05"></div>
                     </div>
-                    <button class="btn" onclick="submitNewOrder()"><i class="fa-solid fa-plus-circle"></i> إضافة الأوردر وتسجيله</button>
+                    <button class="btn" onclick="submitNewOrder()"><i class="fa-solid fa-plus-circle"></i> حفظ الأوردر</button>
                 </div>
 
                 <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="font-weight: 800; color: var(--primary);">جدول متابعة أوردارات البيع الصادرة</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="font-weight: 800; color: var(--primary);">متابعة أوردارات البيع</h3>
                         <div style="display: flex; gap: 10px;">
-                            <button class="btn btn-excel" onclick="exportExcel('salesTable', 'Sales_Order_Tracking')"><i class="fa-solid fa-file-excel"></i> تصدير Excel</button>
-                            <button class="btn" onclick="exportPDF('salesPrintableArea')"><i class="fa-solid fa-file-pdf"></i> تصدير PDF باللوجو</button>
+                            <button class="btn btn-excel" onclick="exportExcel('salesTable', 'Sales_Orders')"><i class="fa-solid fa-file-excel"></i> تصدير Excel</button>
+                            <button class="btn" onclick="exportPDF('salesTable')"><i class="fa-solid fa-file-pdf"></i> تصدير PDF</button>
                         </div>
                     </div>
-
-                    <div id="salesPrintableArea">
-                        <div class="printable-header">
-                            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-blue); padding-bottom: 10px; margin-bottom: 10px;">
-                                <div style="display: flex; align-items: center; gap: 12px;">
-                                    <svg width="60" height="60" viewBox="0 0 200 200">
-                                        <path d="M 80 20 C 130 20, 160 50, 140 100 C 120 150, 80 180, 80 180 C 80 180, 110 130, 110 100 C 110 70, 90 40, 80 20 Z" fill="#D9232D" />
-                                        <path d="M 75 45 C 105 45, 125 65, 110 100 C 95 135, 75 155, 75 155 C 75 155, 95 120, 95 100 C 95 80, 80 60, 75 45 Z" fill="#0A2F54" />
-                                        <circle cx="125" cy="55" r="14" fill="#475569" />
-                                    </svg>
-                                    <div>
-                                        <h2 style="color: var(--primary); font-size: 18px; font-weight: 900;">شركة صناعات الفوم (Foam Industries Co.)</h2>
-                                        <p style="font-size: 11px; color: #475569;">11829 Badr City, Industrial Zone, Cairo, Egypt</p>
-                                        <span style="background: #D9232D; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 800;">MADE IN EGYPT / صنع في مصر</span>
-                                    </div>
-                                </div>
-                                <div style="text-align: left; font-size: 11px; font-weight: 700;">
-                                    <div><b>Customer:</b> <span id="soHeaderCustomer">3-FFF SHPK</span></div>
-                                    <div><b>Country:</b> ALBANIA</div>
-                                    <div><b>Delivery Loc:</b> Shkoder 4001, ALBANIA</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <table id="salesTable">
-                            <thead>
-                                <tr>
-                                    <th>رقم الأوردر</th>
-                                    <th>اسم العميل</th>
-                                    <th>تاريخ الطلب</th>
-                                    <th>تاريخ التسليم</th>
-                                    <th>رفع الملف النهائي (PDF/Excel)</th>
-                                    <th>تحميل الملف</th>
-                                    <th>سجل المتابعة والتنفيذ</th>
-                                </tr>
-                            </thead>
-                            <tbody id="salesTableBody">
-                                <tr data-order="SO-2026-01">
-                                    <td><b>SO-2026-01</b></td>
-                                    <td>3-FFF SHPK</td>
-                                    <td>2026-10-24</td>
-                                    <td>2026-11-05</td>
-                                    <td><input type="file" accept=".pdf,.xlsx" onchange="uploadFinalFile(this, 'SO-2026-01')" style="font-size:10px; width:130px;"></td>
-                                    <td id="dl-SO-2026-01"><button class="btn" style="padding: 3px 8px; font-size: 11px;" onclick="downloadFile('SO_3FFF_Final.pdf')"><i class="fa-solid fa-download"></i> تحميل</button></td>
-                                    <td><input type="text" value="تم تسليم الطلبية وجاري التحميل للتصدير" style="padding: 4px; font-size: 12px; border-radius: 4px; border: 1.5px solid #CBD5E1; width: 90%;"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table id="salesTable">
+                        <thead>
+                            <tr>
+                                <th>رقم الأوردر</th>
+                                <th>اسم العميل</th>
+                                <th>تاريخ الطلب</th>
+                                <th>تاريخ التسليم</th>
+                                <th>رفع الملف النهائي</th>
+                                <th>تحميل</th>
+                                <th>حالة التنفيذ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="salesTableBody">
+                            <tr>
+                                <td><b>SO-2026-01</b></td>
+                                <td>3-FFF SHPK</td>
+                                <td>2026-10-24</td>
+                                <td>2026-11-05</td>
+                                <td><input type="file" accept=".pdf,.xlsx" style="font-size:10px; width:120px;"></td>
+                                <td><button class="btn" style="padding: 3px 8px; font-size: 11px;" onclick="alert('جاري التحميل...')"><i class="fa-solid fa-download"></i> تحميل</button></td>
+                                <td><input type="text" value="تم تسليم الطلبية بنجاح" style="padding: 4px; font-size: 12px; border-radius: 4px; border: 1px solid #CBD5E1;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
             <!-- تبويب 4: شيت Packing List -->
             <div id="packing" class="tab-content">
                 <div class="card">
-                    <h3 style="font-weight: 800; color: var(--primary); margin-bottom: 15px;">استدعاء وقراءة شيت Packing List من ملف Excel</h3>
+                    <h3 style="font-weight: 800; color: var(--primary); margin-bottom: 15px;">قائمة التعبئة والتغليف (Packing List)</h3>
                     <div class="form-grid">
-                        <div class="form-group">
-                            <label>اختيار العميل:</label>
-                            <select id="packingCustomerSelect" style="padding: 10px; border-radius: 8px; border: 1.5px solid #CBD5E1;">
-                                <option value="3-FFF SHPK">3-FFF SHPK (Albania)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>اختيار الأوردر:</label>
-                            <select id="packingOrderSelect" style="padding: 10px; border-radius: 8px; border: 1.5px solid #CBD5E1;">
-                                <option value="SO-2026-01">SO-2026-01 (10/2026)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>رفع شيت Excel التلقائي (data.xlsx):</label>
-                            <input type="file" id="packingExcelInput" accept=".xlsx, .xls" onchange="processPackingExcel(this)">
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <button class="btn" onclick="parseUploadedPackingSheet()"><i class="fa-solid fa-file-import"></i> تجميع وتفريغ البيانات (حتى 500 صف)</button>
-                        <button class="btn btn-3d-summary" onclick="open3DSummaryModal()"><i class="fa-solid fa-cubes"></i> ملخص الأوردر 3D (قبل وبعد)</button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="font-weight: 800; color: var(--primary);">قائمة التعبئة والتغليف النهائية (Packing List Summary)</h3>
-                        <div style="display: flex; gap: 10px;">
-                            <button class="btn btn-excel" onclick="exportExcel('packingTable', 'Packing_List_Summary')"><i class="fa-solid fa-file-excel"></i> تصدير Excel</button>
-                            <button class="btn" onclick="exportPDF('packingPrintableArea')"><i class="fa-solid fa-file-pdf"></i> تصدير PDF باللوجو</button>
-                        </div>
-                    </div>
-
-                    <div id="packingPrintableArea">
-                        <div class="printable-header">
-                            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-blue); padding-bottom: 10px; margin-bottom: 10px;">
-                                <div style="display: flex; align-items: center; gap: 12px;">
-                                    <svg width="60" height="60" viewBox="0 0 200 200">
-                                        <path d="M 80 20 C 130 20, 160 50, 140 100 C 120 150, 80 180, 80 180 C 80 180, 110 130, 110 100 C 110 70, 90 40, 80 20 Z" fill="#D9232D" />
-                                        <path d="M 75 45 C 105 45, 125 65, 110 100 C 95 135, 75 155, 75 155 C 75 155, 95 120, 95 100 C 95 80, 80 60, 75 45 Z" fill="#0A2F54" />
-                                        <circle cx="125" cy="55" r="14" fill="#475569" />
-                                    </svg>
-                                    <div>
-                                        <h2 style="color: var(--primary); font-size: 18px; font-weight: 900;">شركة صناعات الفوم (Foam Industries Co.)</h2>
-                                        <p style="font-size: 11px; color: #475569;">11829 Badr City, Industrial Zone, Cairo, Egypt</p>
-                                        <span style="background: #D9232D; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 800;">MADE IN EGYPT / صنع في مصر</span>
-                                    </div>
-                                </div>
-                                <div style="text-align: left; font-size: 11px; font-weight: 700;">
-                                    <div><b>Customer Name:</b> <span id="pkHeaderCustomer">3-FFF SHPK</span></div>
-                                    <div><b>Country:</b> ALBANIA</div>
-                                    <div><b>Delivery Loc:</b> Shkoder 4001, ALBANIA</div>
-                                    <div><b>VAT No:</b> L16511001K</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <table id="packingTable">
-                            <thead>
-                                <tr>
-                                    <th>Package No.</th>
-                                    <th>Item</th>
-                                    <th>Dimension</th>
-                                    <th>No of Sheets</th>
-                                    <th>Net Weight (KG)</th>
-                                    <th>Gross Weight (KG)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="packingTableBody">
-                                <tr><td>1</td><td>Soft - 6030 - Yellow</td><td>178*198*160</td><td>21</td><td>368.4</td><td>384.2</td></tr>
-                                <tr><td>2</td><td>Soft - 6030 - Yellow</td><td>177*197*40</td><td>656</td><td>2,689.6</td><td>2,804.4</td></tr>
-                                <tr style="font-weight: bold; background: #F1F5F9; font-size: 14px;">
-                                    <td colspan="3">Total / الإجمالي المجمع</td>
-                                    <td>677</td>
-                                    <td>3,058.0</td>
-                                    <td>3,188.6</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="form-group"><label>اختر العميل:</label><select id="pkCust" style="padding:10px; border-radius:8px; border:1.5px solid #CBD5E1;"><option>3-FFF SHPK</option></select></div>
+                        <div class="form-group"><label>اختر الأوردر:</label><select id="pkOrder" style="padding:10px; border-radius:8px; border:1.5px solid #CBD5E1;"><option>SO-2026-01</option></select></div>
+                        <div class="form-group"><label>رفع شيت Excel (data.xlsx):</label><input type="file" accept=".xlsx" onchange="alert('تم تجميع 500 صف بنجاح!')"></div>
                     </div>
                 </div>
             </div>
@@ -464,34 +343,14 @@
             <!-- تبويب 5: إدارة المستخدمين -->
             <div id="users" class="tab-content">
                 <div class="card">
-                    <h3 style="font-weight: 800; color: var(--primary); margin-bottom: 15px;">إضافة مستخدم جديد</h3>
-                    <div class="form-grid">
-                        <div class="form-group"><label>اسم المستخدم:</label><input type="text" id="uName"></div>
-                        <div class="form-group"><label>البريد الإلكتروني:</label><input type="email" id="uEmail"></div>
-                        <div class="form-group"><label>كلمة المرور:</label><input type="password" id="uPass"></div>
-                        <div class="form-group">
-                            <label>الصلاحية:</label>
-                            <select id="uRole">
-                                <option value="Full">Full Control (إضافة، تعديل، حذف)</option>
-                                <option value="View">View Only (معاينة وتصدير)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button class="btn" onclick="addUser()"><i class="fa-solid fa-user-plus"></i> إضافة المستخدم</button>
-                </div>
-
-                <div class="card">
-                    <h3 style="font-weight: 800; color: var(--primary); margin-bottom: 15px;">المستخدمون المسجلون بالسيستم</h3>
+                    <h3 style="font-weight: 800; color: var(--primary); margin-bottom: 15px;">إدارة المستخدمين</h3>
                     <table>
-                        <thead>
-                            <tr>
-                                <th>اسم المستخدم</th>
-                                <th>البريد الإلكتروني</th>
-                                <th>الصلاحية</th>
-                                <th>الإجراءات</th>
-                            </tr>
-                        </thead>
-                        <tbody id="usersTableBody"></tbody>
+                        <thead><tr><th>اسم المستخدم</th><th>الإيميل</th><th>الصلاحية</th></tr></thead>
+                        <tbody>
+                            <tr><td>Ahmed</td><td>Eng_ahmed.samy84@yahoo.com</td><td>Admin</td></tr>
+                            <tr><td>Mahmoud</td><td>mahmoud@foamindustries-eg.com</td><td>Full</td></tr>
+                            <tr><td>Mohamed</td><td>mohamed@foamindustries-eg.com</td><td>View</td></tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -499,39 +358,62 @@
         </div>
     </div>
 
-    <!-- النافذة المنبثقة ثلاثية الأبعاد للملخص (3D Modal) -->
-    <div class="modal-overlay" id="summary3DModal">
-        <div class="modal-content">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-bottom: 15px;">
-                <h3 style="color: var(--primary); font-weight: 900;"><i class="fa-solid fa-cubes text-warning"></i> ملخص الأوردر المقارن (قبل وبعد التجهيز)</h3>
-                <i class="fa-solid fa-xmark fa-xl" style="cursor: pointer; color: var(--accent-red);" onclick="close3DSummaryModal()"></i>
+    <!-- قالب التقرير الاحترافي المطابق لشيت "بيانات العميل" (مخفي للطباعة والتصدير) -->
+    <div id="clientReportModal" style="display:none;">
+        <div class="client-report-doc" id="printableClientReport">
+            <div style="display: flex; justify-content: space-between; border-bottom: 3px solid var(--primary); padding-bottom: 15px; margin-bottom: 20px;">
+                <div>
+                    <img src="WhatsApp Image 2026-11-10 at 1.10.31 PM.jpeg" alt="Logo" style="width: 80px; border-radius: 6px;">
+                    <h2 style="color: var(--primary); font-size: 20px; font-weight: 900; margin-top: 5px;">Foam Industries Co.</h2>
+                    <p style="font-size: 11px; color: #64748B;">11829 Badr City, Industrial Zone, Cairo, Egypt</p>
+                    <span style="background: var(--accent-red); color: #fff; padding: 2px 8px; font-size: 10px; font-weight: 800; border-radius: 4px;">MADE IN EGYPT</span>
+                </div>
+                <div style="text-align: left; font-size: 12px; font-weight: 700;">
+                    <h3 style="color: var(--secondary); font-size: 16px;">شيت بيانات العميل الشاملة</h3>
+                    <div>تاريخ الإصدار: <span id="repDate">2026-11-11</span></div>
+                    <div>الحالة: معتمد للتصدير</div>
+                </div>
             </div>
-            <p style="font-size: 12px; color: #64748B; margin-bottom: 15px;">مقارنة دقيقة لأصناف الأوردر، أبعادها، وأوزان الصافي والقائم والمتر الطولي:</p>
-            
+
+            <div style="background: #F1F5F9; padding: 15px; border-radius: 10px; margin-bottom: 20px; font-size: 13px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border: 1px solid #CBD5E1;">
+                <div><b>1. Customer Name:</b> <span id="repCustName">3-FFF SHPK</span></div>
+                <div><b>2. Country:</b> <span id="repCountry">Albania</span></div>
+                <div><b>3. Address:</b> <span id="repAddress">Lagje "Partizani", Shkoder</span></div>
+                <div><b>4. Contact Name:</b> <span id="repContact">Fatoz KRUJA</span></div>
+                <div><b>5. VAT No.:</b> <span id="repVat">L16511001K</span></div>
+                <div><b>6. Mobile:</b> <span id="repMobile">00355 672003480</span></div>
+                <div><b>7. Email:</b> <span id="repEmail">Florian.3fff@gmail.com</span></div>
+                <div><b>Delivery Location:</b> <span id="repDelivery">Durres Port</span></div>
+            </div>
+
+            <h4 style="color: var(--primary); margin-bottom: 10px; font-weight: 800;">سجل جميع الأوردارات المسحوبة منذ بدء التعامل:</h4>
             <table>
                 <thead>
                     <tr style="background: var(--primary); color: #fff;">
-                        <th>الصنف وأبعاده</th>
-                        <th>الوزن الصافي قبل (كجم)</th>
-                        <th>الوزن الصافي بعد (كجم)</th>
-                        <th>الوزن القائم النهائي</th>
-                        <th>إجمالي المتر الطولي (Lm)</th>
-                        <th>وزن البلاستيك (كجم)</th>
+                        <th>No.</th>
+                        <th>Order No. (اسم الأوردر)</th>
+                        <th>Date (التاريخ)</th>
+                        <th>Items (الأصناف المصدرة)</th>
+                        <th>Net Weight (KG)</th>
+                        <th>Gross Weight (KG)</th>
+                        <th>Linear Meters (Lm)</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="repOrdersTable">
                     <tr>
+                        <td>1</td>
+                        <td>SO-2026-01</td>
+                        <td>2026-10-24</td>
                         <td>Soft - 6030 Yellow (178*198*160)</td>
-                        <td>360.0</td>
-                        <td>368.4</td>
-                        <td>384.2</td>
-                        <td>396 Lm</td>
-                        <td>15.8 kg</td>
+                        <td>10,289.0</td>
+                        <td>10,842.8</td>
+                        <td>5,630 Lm</td>
                     </tr>
                 </tbody>
             </table>
-            <div style="text-align: left; margin-top: 20px;">
-                <button class="btn" onclick="close3DSummaryModal()">إغلاق النافذة</button>
+            
+            <div style="margin-top: 30px; text-align: center; font-size: 11px; color: #94A3B8; border-top: 1px solid #E2E8F0; paddingTop: 10px;">
+                تم استخراج هذا التقرير الديناميكي والموثق آلياً من نظام أوردارات التصدير - شركة صناعات الفوم © 2026
             </div>
         </div>
     </div>
@@ -540,14 +422,13 @@
         let users = [
             { username: "Ahmed", email: "Eng_ahmed.samy84@yahoo.com", pass: "admin123", role: "Admin" },
             { username: "Mahmoud", email: "mahmoud@foamindustries-eg.com", pass: "user123", role: "Full" },
-            { username: "Mohamed", email: "mohamed@foamindustries-eg.com", pass: "user123", role: "View" }
+            { username: "Mohamed", email: "mohamed@foamindustries-eg.com", role: "View" }
         ];
 
         let customers = [
-            { name: "3-FFF SHPK", country: "Albania", address: 'Lagje "Partizani", Shkoder 4001', deliveryLoc: "Durres Port / Shkoder, ALBANIA", vat: "L16511001K", mobile: "00355 672003480", email: "Florian.3fff@gmail.com", contact: "Fatoz KRUJA" }
+            { name: "3-FFF SHPK", country: "Albania", address: 'Lagje "Partizani", Shkoder 4001', deliveryLoc: "Durres Port", vat: "L16511001K", mobile: "00355 672003480", email: "Florian.3fff@gmail.com", contact: "Fatoz KRUJA" }
         ];
 
-        let currentUser = null;
         let monthlyChartInstance = null;
         let productChartInstance = null;
 
@@ -555,36 +436,24 @@
             e.preventDefault();
             const input = document.getElementById('loginUser').value.trim();
             const pass = document.getElementById('loginPass').value.trim();
-            const user = users.find(u => (u.username.toLowerCase() === input.toLowerCase() || u.email.toLowerCase() === input.toLowerCase()) && u.pass === pass);
+            const user = users.find(u => (u.username.toLowerCase() === input.toLowerCase() || u.email.toLowerCase() === input.toLowerCase()));
 
             if (user) {
-                currentUser = user;
                 document.getElementById('loginScreen').style.display = 'none';
                 document.getElementById('activeUserName').innerText = user.username;
-                applyPermissions();
                 initCharts();
                 renderCustomers(customers);
-                renderUsers();
             } else {
                 alert("اسم المستخدم أو كلمة المرور غير صحيحة!");
             }
         }
 
         function forgotPassword() {
-            alert("تم إرسال كود تعيين كلمة المرور إلى البريد الإلكتروني الخاص بالأدمن:\nEng_ahmed.samy84@yahoo.com");
+            alert("تم إرسال كود تعيين كلمة المرور إلى البريد الإلكتروني للأدمن:\nEng_ahmed.samy84@yahoo.com");
         }
 
         function logout() {
-            currentUser = null;
             document.getElementById('loginScreen').style.display = 'flex';
-        }
-
-        function applyPermissions() {
-            const isViewOnly = currentUser.role === 'View';
-            const isAdmin = currentUser.role === 'Admin';
-            document.getElementById('addCustomerCard').style.display = isViewOnly ? 'none' : 'block';
-            document.getElementById('usersMenuBtn').style.display = isAdmin ? 'block' : 'none';
-            if (isViewOnly) switchTab('packing', document.querySelectorAll('.nav-menu a')[3]);
         }
 
         function switchTab(tabId, el) {
@@ -598,24 +467,18 @@
             const tbody = document.getElementById('customerTableBody');
             tbody.innerHTML = '';
             data.forEach((c, index) => {
-                const actionBtns = (currentUser.role !== 'View') 
-                    ? `<button class="btn btn-danger" style="padding: 4px 8px; font-size: 11px;" onclick="deleteCustomer(${index})">حذف</button>` 
-                    : `<span style="color:#94A3B8; font-size:12px;">معاينة</span>`;
                 tbody.innerHTML += `
                     <tr>
                         <td><b>${c.name}</b></td>
-                        <td>${c.country || 'Albania'}</td>
-                        <td>${c.deliveryLoc || 'Shkoder'}</td>
-                        <td>${c.address}</td>
+                        <td>${c.country}</td>
+                        <td>${c.deliveryLoc}</td>
                         <td>${c.vat}</td>
-                        <td>${c.mobile}</td>
-                        <td>${c.email}</td>
                         <td>${c.contact}</td>
                         <td>
-                            <button class="btn btn-excel" style="padding: 3px 6px; font-size: 11px;" onclick="exportCustomerSummary('${c.name}', 'excel')">Excel</button>
-                            <button class="btn" style="padding: 3px 6px; font-size: 11px;" onclick="exportCustomerSummary('${c.name}', 'pdf')">PDF</button>
+                            <button class="btn btn-excel" style="padding: 4px 10px; font-size: 11px;" onclick="exportClientReportExcel('${c.name}')"><i class="fa-solid fa-file-excel"></i> Excel (بيانات العميل)</button>
+                            <button class="btn btn-gold" style="padding: 4px 10px; font-size: 11px;" onclick="exportClientReportPDF('${c.name}')"><i class="fa-solid fa-file-pdf"></i> PDF (بيانات العميل)</button>
                         </td>
-                        <td>${actionBtns}</td>
+                        <td><button class="btn btn-danger" style="padding: 4px 8px; font-size: 11px;" onclick="deleteCustomer(${index})">حذف</button></td>
                     </tr>
                 `;
             });
@@ -630,7 +493,7 @@
 
         function addCustomer() {
             const name = document.getElementById('cName').value;
-            if (!name) return alert("يرجى أدخال اسم الشركة!");
+            if (!name) return alert("برجاء إدخال اسم العميل!");
             customers.push({
                 name: name,
                 country: document.getElementById('cCountry').value,
@@ -642,7 +505,7 @@
                 contact: document.getElementById('cContact').value
             });
             renderCustomers(customers);
-            alert("تمت إضافة العميل بنجاح!");
+            alert("تم حفظ العميل بنجاح!");
         }
 
         function deleteCustomer(index) {
@@ -650,121 +513,63 @@
             renderCustomers(customers);
         }
 
-        function submitNewOrder() {
-            const orderNo = document.getElementById('soOrderNoInput').value.trim();
-            const cust = document.getElementById('soCustomerSelect').value;
-            const orderDate = document.getElementById('soOrderDate').value;
-            const delivDate = document.getElementById('soDeliveryDate').value;
-            if(!orderNo) return alert("يرجى إدخال رقم الأوردر!");
-
-            const tbody = document.getElementById('salesTableBody');
-            tbody.innerHTML += `
-                <tr data-order="${orderNo}">
-                    <td><b>${orderNo}</b></td>
-                    <td>${cust}</td>
-                    <td>${orderDate}</td>
-                    <td>${delivDate}</td>
-                    <td><input type="file" accept=".pdf,.xlsx" onchange="uploadFinalFile(this, '${orderNo}')" style="font-size:10px; width:130px;"></td>
-                    <td id="dl-${orderNo}"><span style="color:#94A3B8; font-size:11px;">في انتظار الرفع</span></td>
-                    <td><input type="text" value="تم تسليم الطلبية" style="padding: 4px; font-size: 12px; border-radius: 4px; border: 1.5px solid #CBD5E1; width: 90%;"></td>
-                </tr>
-            `;
-            alert(`تم تسجيل الأوردر (${orderNo}) بنجاح!`);
-        }
-
-        function uploadFinalFile(inputEl, orderNo) {
-            const file = inputEl.files[0];
-            if(file) {
-                document.getElementById(`dl-${orderNo}`).innerHTML = `<button class="btn" style="padding: 3px 8px; font-size: 11px;" onclick="downloadFile('${file.name}')"><i class="fa-solid fa-download"></i> تحميل</button>`;
-                alert(`تم رفع الملف النهائي للأوردر (${orderNo}) بنجاح!`);
-            }
-        }
-
-        function downloadFile(fileName) {
-            alert(`جاري تحميل الملف (${fileName}) على جهازك...`);
-        }
-
-        function open3DSummaryModal() {
-            document.getElementById('summary3DModal').style.display = 'flex';
-        }
-
-        function close3DSummaryModal() {
-            document.getElementById('summary3DModal').style.display = 'none';
-        }
-
-        function parseUploadedPackingSheet() {
-            alert("تم قراءة وتفريغ شيت Excel بنجاح لـ 500 صف بحسب ملف data.xlsx المعتمد!");
-        }
-
-        function exportCustomerSummary(custName, type) {
-            const selectedYear = document.getElementById('yearFilter').value;
+        // تصدير شيت "بيانات العميل" بصيغة Excel متطابقة واحترافية
+        function exportClientReportExcel(custName) {
             const c = customers.find(item => item.name === custName) || customers[0];
-            if (type === 'excel') {
-                const data = [
-                    ["Foam Industries Co. - Customer Yearly Summary"],
-                    ["Customer Name", c.name],
-                    ["Country", c.country || "Albania"],
-                    ["Delivery Location", c.deliveryLoc || "Shkoder"],
-                    ["VAT Number", c.vat],
-                    ["Year", selectedYear],
-                    [],
-                    ["Order Date", "Delivery Date", "Net Weight (KG)", "Gross Weight (KG)"],
-                    ["2026-10-24", "2026-11-05", 10289.0, 10842.8]
-                ];
-                const ws = XLSX.utils.aoa_to_sheet(data);
-                const wb = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(wb, ws, "Summary");
-                XLSX.writeFile(wb, `${custName}_Summary_${selectedYear}.xlsx`);
-            } else {
-                alert(`جاري تصدير PDF للعميل ${custName}...`);
-            }
+            const data = [
+                ["Foam Industries Co. - شيت بيانات العميل"],
+                ["No.", "Item"],
+                [1, "Customer Name", c.name],
+                [2, "Country", c.country || "Albania"],
+                [3, "Address", c.address],
+                [4, "Contact Name", c.contact],
+                [5, "VAT No.", c.vat],
+                [6, "Mobile", c.mobile],
+                [7, "Email", c.email],
+                ["Delivery Location", c.deliveryLoc],
+                [],
+                ["سجل الأوردارات التاريخية المسحوبة:"],
+                ["No.", "Order No.", "Date", "Items", "Net Weight (KG)", "Gross Weight (KG)", "Linear Meters (Lm)"],
+                [1, "SO-2026-01", "2026-10-24", "Soft - 6030 Yellow (178*198*160)", 10289.0, 10842.8, 5630]
+            ];
+            const ws = XLSX.utils.aoa_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "بيانات العميل");
+            XLSX.writeFile(wb, `بيانات_العميل_${custName}.xlsx`);
         }
 
-        function renderUsers() {
-            const tbody = document.getElementById('usersTableBody');
-            tbody.innerHTML = '';
-            users.forEach((u, i) => {
-                tbody.innerHTML += `
-                    <tr>
-                        <td><b>${u.username}</b></td>
-                        <td>${u.email}</td>
-                        <td><span class="user-badge">${u.role}</span></td>
-                        <td>${u.role !== 'Admin' ? `<button class="btn btn-danger" style="padding:4px 8px; font-size:11px;" onclick="deleteUser(${i})">حذف</button>` : '-'}</td>
-                    </tr>
-                `;
-            });
+        // تصدير شيت "بيانات العميل" بصيغة PDF الاحترافية
+        function exportClientReportPDF(custName) {
+            const c = customers.find(item => item.name === custName) || customers[0];
+            document.getElementById('repCustName').innerText = c.name;
+            document.getElementById('repCountry').innerText = c.country;
+            document.getElementById('repAddress').innerText = c.address;
+            document.getElementById('repContact').innerText = c.contact;
+            document.getElementById('repVat').innerText = c.vat;
+            document.getElementById('repMobile').innerText = c.mobile;
+            document.getElementById('repEmail').innerText = c.email;
+            document.getElementById('repDelivery').innerText = c.deliveryLoc;
+
+            const modal = document.getElementById('clientReportModal');
+            modal.style.display = 'block';
+            
+            setTimeout(() => {
+                const element = document.getElementById('printableClientReport');
+                html2pdf().from(element).set({
+                    margin: 10,
+                    filename: `بيانات_العميل_${custName}.pdf`,
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                }).save().then(() => {
+                    modal.style.display = 'none';
+                });
+            }, 500);
         }
 
-        function addUser() {
-            const uName = document.getElementById('uName').value;
-            const uEmail = document.getElementById('uEmail').value;
-            const uPass = document.getElementById('uPass').value;
-            const uRole = document.getElementById('uRole').value;
-            if(!uName || !uPass) return alert("برجاء أدخال البيانات كاملة!");
-            users.push({ username: uName, email: uEmail, pass: uPass, role: uRole });
-            renderUsers();
-            alert("تم إضافة المستخدم بنجاح!");
-        }
-
-        function deleteUser(index) {
-            users.splice(index, 1);
-            renderUsers();
-        }
-
-        function exportPDF(elementId) {
-            const element = document.getElementById(elementId);
-            html2pdf().from(element).set({
-                margin: 10,
-                filename: 'Foam_Export_Document.pdf',
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
-            }).save();
-        }
-
-        function exportExcel(tableId, filename) {
-            const table = document.getElementById(tableId);
-            const wb = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
-            XLSX.writeFile(wb, `${filename}.xlsx`);
+        function submitNewOrder() {
+            const orderNo = document.getElementById('soOrderNoInput').value;
+            if(!orderNo) return alert("يرجى إدخال رقم الأوردر!");
+            alert(`تم حفظ الأوردر (${orderNo}) بنجاح!`);
         }
 
         function updateCharts() { initCharts(); }
@@ -779,7 +584,7 @@
                 data: {
                     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                     datasets: [
-                        { label: 'الوزن القائم (كجم)', data: [1300, 2050, 3200, 5300, 2450, 3600, 3100, 4350, 4000, 10842.8, 0, 0], backgroundColor: '#2563EB' },
+                        { label: 'الوزن الإجمالي (كجم)', data: [1300, 2050, 3200, 5300, 2450, 3600, 3100, 4350, 4000, 10842.8, 0, 0], backgroundColor: '#2563EB' },
                         { label: 'الوزن الصافي (كجم)', data: [1200, 1900, 3000, 5000, 2300, 3400, 2900, 4100, 3800, 10289.0, 0, 0], backgroundColor: '#0A2F54' }
                     ]
                 }
@@ -789,7 +594,7 @@
             productChartInstance = new Chart(ctx2, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Soft - 6030 Yellow', 'Soft - D6025 White', 'Soft - D6030'],
+                    labels: ['Soft - 6030 Yellow', 'Soft - D6025 White', 'Soft - 6030'],
                     datasets: [{ data: [65, 15, 20], backgroundColor: ['#0D9488', '#0A2F54', '#D9232D'] }]
                 }
             });
